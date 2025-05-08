@@ -339,12 +339,15 @@ button:hover {
 } 
 
 .popular_places{
-  max-width:1200px;
-  margin: 0 auto; 
+  padding-left:100px;
+  padding-right: 90px;  /* або навіть від’ємне значення */
+  max-width: 1080px;   /* зменшене трохи */
+  margin: 0 auto;
+  overflow-x: hidden;
 }
 
-.popular_places h2, p{
-  margin-left:60px;
+.popular_places p{
+  color: #595959;
 }
 
 .popular_places h2{
@@ -353,37 +356,16 @@ button:hover {
 
 .slider {
   position: relative;
-  display: flex;
-  align-items: center;
+  width: 100%;
   overflow: hidden;
+  margin-bottom: 30px;
 }
+
 
 .slider > .hotel-card:first-child {
   margin-left: 50px;
 }
 
-.hotel-card{
-  flex: 0 0 auto;
-  width:250px;
-  margin-right:20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  overflow:hidden;
-  background:white;
-  position:relative;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.hotel-info{
-  padding:10px;
-}
-
-.hotel-card img{
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 12px;
-}
 
 .hotel-card h3{
   margin: 0 0 5px;
@@ -397,6 +379,7 @@ button:hover {
   font-size:14px;
   margin-top: 10px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .raiting-block{
@@ -422,7 +405,7 @@ button:hover {
   justify-content: center;
   font-size:18px;
   color:rgb(0, 0, 0);
-  box-shadow: 0 2px 5 px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s;
   cursor:pointer;
 }
@@ -466,7 +449,6 @@ button:hover {
   overflow-x: auto;
   scroll-behavior: smooth;
   gap: 0;
-  padding: 20px 0 20px 0;
   flex: 1;
 }
 
@@ -522,4 +504,345 @@ button:hover {
 .interesting_place {
   padding-left: 200px;
   padding-right:200px;
+}
+
+/*Місця для поїдки*/
+.type_acomodation {
+  padding-left: 220px;
+  padding-right:220px;
+}
+
+.type_acomodation h2{
+  padding-top: 25px;
+}
+
+.type_acomodation p{
+  padding-left:-50px;
+}
+
+.type_acomodation p {
+  text-align: left;
+  margin-left: 0; /* відступ зліва */
+  color: #595959;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filter-btn.active {
+  background-color: #1f6cbe;
+  color: white;
+  border-color: #186cc5;
+}
+
+.captions {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.hotel-card, .destination{
+  flex: 0 0 auto;
+  width:250px;
+  margin-right:20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow:hidden;
+  background:white;
+  position:relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-info p {
+  color: #666565;
+}
+
+.hotel-info{
+  padding:10px;
+}
+
+.hotel-card img, .destination img{
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.hotel-card h3{
+  margin: 0 0 5px;
+  font-size:18px;
+  color: #333;
+}
+
+.hotel-card p, .captions p{
+  margin: 0 0 10px;
+  color: #000;
+  font-size:14px;
+  margin-top: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.captions .grey_color{
+  color: #595959;
+}
+
+/*Пропозиції на вихідні*/
+.genius {
+  display: inline-block;
+  background-color: #1459a3;
+  color: rgb(250, 250, 250);
+  padding: 1px 9px;
+  border-radius: 3px;
+  font-size: 12px;
+  margin: 1px 0 10px 0; 
+}
+
+.propositions_week{
+  max-width:1050px;
+  margin: 0 auto;
+}
+
+.offer {
+  background-color: #e7f3ff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #1f6cbe;
+  margin: 5px 0;
+  display: inline-block;
+}
+
+.price-old {
+  text-decoration: line-through;
+  color: #d10024;
+  margin-right: 5px;
+}
+
+.price-new {
+  color: #000;
+  font-weight: bold;
+}
+
+.propositions_week p{
+  color: #666565;
+}
+
+/*Подорожуйте більше, витрачайте менше*/
+.travel_more {
+  padding-left: 220px;
+  padding-right: 220px;
+}
+
+
+.travel-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+  flex-wrap: wrap;
+}
+
+.travel-text {
+  max-width: 70%;
+}
+
+.travel_more h2 {
+  padding-left:10px;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.travel-text p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.buttons {
+  margin-top: 15px;
+}
+
+.btn-primary, .btn-secondary {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.btn-primary {
+  background-color: #006ce4;
+  color: #fff;
+}
+
+.btn-secondary {
+  color: #006ce4;
+}
+
+/*Популярно серед мандрівників України*/
+.popular-destinations {
+  max-width: 1050px;
+  margin: auto;
+  padding: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background: none;
+  color: #000000;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.tab.active {
+  border: 1px solid #0071c2;
+  color: #0071c2;
+  background: #ffffff;
+  font-weight: 500;
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px 40px; /* вертикальний та горизонтальний відступи */
+  max-width: 1200px;
+  margin: 20px auto;
+  font-size: 11px;
+  line-height: 1.6;
+  cursor:pointer;
+}
+
+.show-more {
+  color: #0071c2;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/*Футер 1*/
+.footer-top {
+  padding: 20px 215px;
+  font-size: 13px;
+  color: #333;
+  text-align: center;
+  line-height: 1.8;
+  cursor: pointer;
+}
+
+.footer-top p {
+  margin: 8px 0;
+}
+
+/*Футер 2*/
+.footer-main {
+  background-color: #e0e0e0f0;
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #222;
+}
+
+.footer-columns {
+  max-width: 1050px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  text-align: left;
+}
+
+.footer-main h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-main ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-main ul li {
+  margin-bottom: 8px;
+}
+
+.footer-main ul li a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.footer-main ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 30px auto 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #000000;
+}
+
+.footer-flag span{
+  padding-left:20px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.footer-flag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left:80px;
+}
+
+.footer-flag img {
+    width: 24px;
+    height: auto;
+}
+
+.footer-flag img:hover{
+  background-color:#bbbbbb;
+  max-width: 60px;
+}
+
+.footer-text {
+    text-align: center;
+    flex: 1 1 100%;
+    margin-top: 10px;
 }
