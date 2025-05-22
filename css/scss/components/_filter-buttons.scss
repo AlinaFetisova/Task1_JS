@@ -1,0 +1,23 @@
+.filter-buttons {
+  margin: 15px 0 30px 0;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.filter-btn {
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  color: #666565;
+  border: 1px solid #ddd;
+  margin-right: 8px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+}
+
+.filter-btn.active {
+  color: white;
+  background-color: $main-color;
+  border-color: $main-color;
+}

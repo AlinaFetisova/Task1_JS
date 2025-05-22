@@ -1,0 +1,37 @@
+@use 'variables';
+
+.button {
+  background-color: $main-color;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($main-color, 10%);
+  }
+}
+
+.property-login a,
+.header-right a {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 3px;
+  text-decoration: none;
+  border: 1px solid $main-color;
+  cursor: pointer;
+}
+
+.property-login a {
+  background-color: #fff;
+  color: $main-color;
+}
+
+.property-login a:hover,
+.header-right a:hover {
+  background-color: lighten($main-color, 40%);
+  color: darken($main-color, 20%);
+}

@@ -1,0 +1,22 @@
+@use 'variables';
+
+.menu {
+  background-color: #003b95;
+  color: white;
+  padding: 0 30px 10px 210px;
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+.menu a:hover {
+  background-color: #004bb5;
+}

@@ -1,0 +1,35 @@
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  font-size: 20px;
+  color: #333;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #eee;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: $main-color;
+  color: white;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.images {
+  display: flex;
+  gap: 15px;
+  padding-left: 20px;
+}

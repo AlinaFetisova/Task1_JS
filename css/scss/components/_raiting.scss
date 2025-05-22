@@ -1,0 +1,28 @@
+.raiting-block {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+  padding-top: 5px;
+}
+
+.raiting-number {
+  color: #000;
+  font-weight: 600;
+}
+
+.raiting-text {
+  color: #666565;
+  font-weight: 400;
+}
+
+.favorite {
+  font-size: 20px;
+  color: #bbb;
+  cursor: pointer;
+
+  &:hover {
+    color: red;
+  }
+}

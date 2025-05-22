@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to bottom, #003b95, #7eace0);
+    }
+
+    .login-container {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        width: 320px;
+        box-shadow: 0 0 30px rgba(0,0,0,0.1);
+        text-align: center;
+        margin: 40px auto;
+    }
+    .login-container h2 {
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+
+    .login-container p {
+      margin-bottom: 25px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .login-container input[type="email"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      background: #f1f1f1;
+      border-radius: 25px;
+      outline: none;
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .options input {
+      margin-right: 5px;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(to right, #0072ff, #00c6ff);
+      border: none;
+      border-radius: 25px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .login-btn:hover {
+      opacity: 0.95;
+    }
+
+    .signup-link {
+      margin-top: 20px;
+      font-size: 13px;
+    }
+
+    .signup-link a {
+      color: #00c6ff;
+      text-decoration: none;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+
+    .search-text {
+        position: relative;
+        z-index: 2;
+        margin-left:-260px;
+    }
+
+.search-text h3 {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.search-item input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  background: transparent;
+}
+
+.icon, .clear, .arrow {
+  font-size: 16px;
+  color: #555;
+  cursor: pointer;
+}
+
+.search-section {
+  position: relative;
+  background-color: #003b95;
+  color: white;
+  padding-bottom: 80px;
+  overflow: hidden;
+  margin:0;
+  overflow:hidden;
+  padding:0;
+  text-align: left;
+}
+
+.background-image{
+  background-size: cover;
+  background-position: center;
+  min-height: 500px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  padding-left: 0;
+  position: relative;
+  background-image: url('https://q-xx.bstatic.com/xdata/images/xphoto/720x217/494555314.jpeg?k=1f633b0c5d2f95a79e2b8a44dca04e401d5875864ee1940b968fdda5a550323f&o= 720w, https://q-xx.bstatic.com/xdata/images/xphoto/1440x434/494555314.jpeg?k=1f633b0c5d2f95a79e2b8a44dca04e401d5875864ee1940b968fdda5a550323f&o= 1440w, https://q-xx.bstatic.com/xdata/images/xphoto/2880x868/494555314.jpeg?k=1f633b0c5d2f95a79e2b8a44dca04e401d5875864ee1940b968fdda5a550323f&o=2880w');
+}
+
+.search-text p {
+  font-size: 25px;
+  margin: 10px 0;
+}
+
+.search-text button {
+  background-color: #0071c2;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px; 
+  font-size: 16px; 
+  cursor: pointer;
+  margin-top: 20px;
+  width: 150px;
+}
+
+.search-text button:hover{
+  background-color: #208ac4;
+}
+
+/*.search-section form {
+  background-color: white;
+  border: 3px solid #febb02;
+  border-radius: 12px;
+  padding: 0;
+  max-width: 1000px;
+  margin: 50px auto 0 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+} */
+
+.search-section {
+  margin:0;
+  padding: 0;
+  background-color: #003b95;
+  color: white;
+  position: relative;
+  text-align: left;
+}
+
+.search-button {
+  background-color: #0071c2;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 0 12px 12px 0;
+  padding: 0 15px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: -9px; 
+}
+
+.search-button:hover {
+  background-color: #208ac4;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-form {
+  background-color: white;
+  border: 3px solid #febb02;
+  border-radius: 12px;
+  padding: 0;
+  max-width: 1000px;
+  width: 100%; /* форма на всю ширину блока */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: absolute; /* ставимо абсолют */
+  bottom: 0; /* опускаємо трохи вниз */
+  left: 0; /* вирівнюємо по лівому краю */
+  right: 0; /* і по правому */
+  margin: 0 auto; /* автоматичні відступи для центрування */
+  z-index: 5; /* форма над всім */
+  margin-left:220px;
+}
+
+.search-inner {
+  display: flex;
+  flex: 1;
+  border: 3px solid #febb02;
+  border-radius: 12px 0 0 12px;
+  overflow: hidden;
+}
+
+.search-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 8px;
+  border-right: 3px solid #febb02;
+  background: white;
+  font-size: 14px;
+  color:#333;
+}
+
+.search-item:last-child {
+  border-right: none;
+}
+
+.property-login {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+
+    /*Header*/
+    body {
+        background-color: #f5f5f5;
+        font-family: 'Arial', sans-serif;
+        color: #333;
+        margin:0;
+        padding:0;
+    }
+    .menu {
+        background-color: #003b95;
+        color: white;
+        padding: 0 30px 10px 210px;
+        display: flex;
+        gap: 10px; 
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding:6px 10px;
+  border-radius: 4px;
+}
+
+.menu a:hover {
+  background-color: #004bb5;
+}
+
+    .logo{
+        font-size: 26px;
+        font-family: sans-serif;
+        font-weight:bold;
+        margin-top:20px;
+        margin-bottom:20px;
+        margin-right: 230px;
+    }
+
+    .header-right .logo:hover {
+        cursor: pointer;
+    }
+
+    .header-right span:hover {
+        background-color: #004bb5;
+        cursor: pointer;
+    }
+
+    .header {
+        background-color: #003b95;
+        color: #fff;
+        padding: 10px 40px 10px 220px;
+        justify-content: space-between;
+        display:flex;
+        align-items: center;
+    }
+
+
+    .property-login .property {
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .header-right img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .header-right img:hover {
+        background-color: #004bb5;
+        cursor: pointer;
+    }
+
+    .property{
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .header-right a:hover {
+        background-color: #e6f0ff;
+        color: #004bb5;
+    }
+
+    .header-right a{
+        color: #006ce4;
+        background-color: #fff;
+        border: 1px solid #006ce4;
+        padding: 6px 12px;
+        border-radius: 3px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .header .buttons a {
+        display: flex;
+    }
+
+    .header img{
+        width:25px;
+        height:25px;
+        margin-right:25px;
+    }
+
+    .header .buttons a {
+        color: aqua;
+        text-decoration: none;
+        margin-left: 15px;
+        font-weight: bold;
+        border-color: #fff;
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        flex:1;
+    }
+
+    .property-login a {
+        color: #006ce4;
+        background-color: #fff;
+        border: 1px solid #006ce4;
+        padding: 6px 12px;
+        border-radius: 3px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .property-login a:hover {
+        background-color: #e6f0ff;
+        color: #004bb5;
+    }
+
+    h1 {
+        color: #3498db;
+    }
+
+    .buttons {
+        display:flex;
+        gap:10px;
+    }
+
+    .property-image {
+        width: 32px; /* Розмір картинки */
+        height: 32px;
+        margin-top: 5px; /* Відступ зверху */
+    }
+
+    button:hover {
+        background-color: #005fa3;
+    }
+
+    .footer-main {
+  background-color: #e0e0e0f0;
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #222;
+}
+
+.footer-columns {
+  max-width: 1050px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  text-align: left;
+}
+
+.footer-main h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-main ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-main ul li {
+  margin-bottom: 8px;
+}
+
+.footer-main ul li a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.footer-main ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 30px auto 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #000000;
+}
+
+.footer-flag span{
+  padding-left:20px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.footer-flag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left:80px;
+}
+
+.footer-flag img {
+    width: 24px;
+    height: auto;
+}
+
+.footer-flag img:hover{
+  background-color:#bbbbbb;
+  max-width: 60px;
+}
+
+.footer-text {
+    text-align: center;
+    flex: 1 1 100%;
+    margin-top: 10px;
+}
+
+  </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Booking.com</div>
+        <div class="header-right">
+            <span>UAH</span>
+            <img src="https://cdn3.iconfinder.com/data/icons/flags-circle/100/Ukraine-512.png" alt="Ukraine">  
+                <span class="property">Зареєструвати своє помешкання</span>
+                <a href="#">Зареєструватися</a>
+                <a href="#">Увійти</a>
+        </div>
+    </header>
+    
+    <nav class="menu">
+        <a href="#">Помешкання</a>
+        <a href="#">Переліт</a>
+        <a href="#">Оренда авто</a>
+        <a href="#">Дозвілля</a>
+        <a href="#">Таксі з/до аеропорту</a>
+    </nav>
+
+    <!-- Форма пошуку -->
+    <section class="search-section">
+        <div class="background-image">
+            <div class="search-text">
+                <div class="property-login">
+                    <h3>Знайдіть помешкання для </h3>
+                    <h3>наступної подорожі</h3>
+                    <p>Знаходьте пропозиції готелів, приватних помешкань та багато іншого...</p>
+                    <button>Забронювати</button>
+                </div>    
+            </div>   
+
+        <form class="search-form">
+            <div class="search-inner">
+                <div class="search-item">
+                    <span class="icon">🏨</span>
+                    <input type="text" placeholder="Бровари">
+                    <span class="clear">✖</span>
+            </div>
+
+            <div class="search-item">
+                <span class="icon">📅</span>
+                <span class="label">Дата заїзду — Дата виїзду</span>
+            </div>
+
+            <div class="search-item">
+                <span class="icon">👤</span>
+                <span class="label">2 дорослих · 0 дітей · 1 номер</span>
+                <span class="arrow">▾</span>
+            </div>
+            </div>
+
+            <button class="search-button">Шукати</button>
+        </form>
+
+        <!--<label class="flight-option">
+            <input type="checkbox" />
+            Я хочу знайти перельоти
+          </label>-->
+        </div>
+    </section> 
+    
+    <main>
+    <div class="w-full max-w-md bg-white p-8 rounded-2xl shadow-xl">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Увійти в акаунт</h2>
+
+    <form action="#" method="POST" class="space-y-5">
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" id="email" name="email" required
+               class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400">
+      </div>
+
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">Пароль</label>
+        <input type="password" id="password" name="password" required
+               class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400">
+      </div>
+
+      <div class="flex justify-between items-center">
+        <label class="flex items-center space-x-2 text-sm">
+          <input type="checkbox" class="accent-blue-500">
+          <span>Запам'ятати мене</span>
+        </label>
+        <a href="#" class="text-sm text-blue-500 hover:underline">Забули пароль?</a>
+      </div>
+
+      <button type="submit"
+              class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-xl font-semibold transition duration-300">
+        Увійти
+      </button>
+    </form>
+
+    <p class="mt-6 text-center text-sm text-gray-600">
+      Немає акаунта?
+      <a href="#" class="text-blue-500 hover:underline">Зареєструватися</a>
+    </p>
+  </div>
+  </main>
+
+     <footer class="footer-main">
+        <div class="footer-columns">
+            <div>
+                <h4>Підтримка</h4>
+                <ul>
+                    <li><a href="#">Коронавірус (COVID-19): питання та відповіді</a></li>
+                    <li><a href="#">Керуйте своїми подорожами</a></li>
+                    <li><a href="#">Зв'язатися зі Службою підтримки</a></li>
+                    <li><a href="#">Центр ресурсів з безпеки</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Різне</h4>
+                <ul>
+                    <li><a href="#">Програма лояльності Genius</a></li>
+                    <li><a href="#">Сезонні та святкові пропозиції</a></li>
+                    <li><a href="#">Статті про подорожі</a></li>
+                    <li><a href="#">Booking.com для компаній</a></li>
+                    <li><a href="#">Traveller Review Awards</a></li>
+                    <li><a href="#">Прокат авто</a></li>
+                    <li><a href="#">Пошук авіаквитків</a></li>
+                    <li><a href="#">Замовлення столиків в ресторанах</a></li>
+                    <li><a href="#">Booking.com для туристичних консультантів</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Правила та налаштування</h4>
+                <ul>
+                    <li><a href="#">Конфіденційність і файли cookie</a></li>
+                    <li><a href="#">Правила та умови</a></li>
+                    <li><a href="#">Розв'язання суперечок</a></li>
+                    <li><a href="#">Заява про протидію сучасному рабству</a></li>
+                    <li><a href="#">Заява про права людини</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Партнери</h4>
+                <ul>
+                    <li><a href="#">Увійти в Екстранет</a></li>
+                    <li><a href="#">Допомога партнерам</a></li>
+                    <li><a href="#">Зареєструвати своє помешкання</a></li>
+                    <li><a href="#">Станьте нашим афіліатом</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Загальна інформація</h4>
+                <ul>
+                    <li><a href="#">Про Booking.com</a></li>
+                    <li><a href="#">Як ми працюємо</a></li>
+                    <li><a href="#">Ековідповідальність</a></li>
+                    <li><a href="#">Прес-центр</a></li>
+                    <li><a href="#">Вакансії</a></li>
+                    <li><a href="#">Для інвесторів</a></li>
+                    <li><a href="#">Корпоративні контакти</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-flag">
+                <img src="https://cdn3.iconfinder.com/data/icons/flags-circle/100/Ukraine-512.png" alt="Ukraine">  
+                <span>UAH</span>
+            </div>
+            <div class="footer-text">
+                <p>Booking.com входить у групу компаній Booking Holdings Inc. – світового лідера в галузі онлайн-туризму та супутніх послуг.</p>
+                <p>Авторські права © 1996–2025 Booking.com™. Усі права захищено.</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>
