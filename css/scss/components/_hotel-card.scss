@@ -1,3 +1,5 @@
+@use '../base/variables';
+
 .hotel-card, .destination {
   flex: 0 0 auto;
   width: 250px;
@@ -21,7 +23,7 @@
 .hotel-card h3 {
   margin: 0 0 5px;
   font-size: 18px;
-  color: #333;
+  color: variables.$text-dark;
 }
 
 .hotel-info {
@@ -34,9 +36,10 @@
 
 .hotel-card p,
 .captions p {
-  margin: 10px 0 0 0;
+  margin: 0 0 10px;
   color: #000;
   font-size: 14px;
-  font-weight: 700;
-  text-align: left;
+  margin-top:10px;
+  font-weight: bold;
+  cursor:pointer;
 }

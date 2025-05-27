@@ -1,7 +1,7 @@
 @use '../base/variables';
 
 .header {
-  background-color: #003b95;
+  background-color: variables.$hover-blue;
   color: #fff;
   padding: 10px 40px 10px 220px;
   justify-content: space-between;
@@ -27,7 +27,7 @@
 .header-right img:hover,
 .header-right span:hover {
   cursor: pointer;
-  background-color: #004bb5;
+  background-color: variables.$hover-blue;
 }
 
 .header-right img {
@@ -37,9 +37,9 @@
 }
 
 .header-right a {
-  color: #006ce4;
+  color: variables.$text-dark;
   background-color: #fff;
-  border: 1px solid #006ce4;
+  border: 1px solid variables.$main-color;
   padding: 6px 12px;
   border-radius: 3px;
   text-decoration: none;
@@ -49,7 +49,7 @@
 
 .header-right a:hover {
   background-color: #e6f0ff;
-  color: #004bb5;
+  color: variables.$text-dark;
 }
 
 .property-login a,
@@ -61,7 +61,7 @@
 
 .property-login a {
   background-color: #fff;
-  border: 1px solid #006ce4;
+  border: 1px solid variables.$main-color;
   padding: 6px 12px;
   border-radius: 3px;
   text-decoration: none;
@@ -71,7 +71,7 @@
 
 .property-login a:hover {
   background-color: #e6f0ff;
-  color: #004bb5;
+  color: variables.$text-dark;
 }
 
 .header .buttons a {

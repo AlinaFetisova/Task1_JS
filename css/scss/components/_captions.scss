@@ -1,8 +1,8 @@
+@use '../base/variables';
+
 .captions {
-  color: #595959;
-  font-size: 14px;
-  font-weight: 400;
-  margin-top: 5px;
+  text-align:center;
+  margin-top: 10px;
 }
 
 .captions p {
@@ -14,4 +14,8 @@
 
 .grey_color {
   color: #666565;
+}
+
+.captions .grey_color{
+  color:#595959;
 }

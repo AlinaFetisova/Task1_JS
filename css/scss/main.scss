@@ -12,6 +12,7 @@
 @use 'layout/popular';
 @use 'layout/interesting';
 @use 'layout/acomodation';
+@use 'layout/footer';
 
 // Components
 @use 'components/buttons';
@@ -20,7 +21,4 @@
 @use 'components/filter-buttons';
 @use 'components/slider';
 @use 'components/captions';
-
-// Pages
-@use 'pages/home';
-
+@use 'components/travel';

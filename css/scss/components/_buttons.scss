@@ -1,7 +1,8 @@
-@use 'variables';
+@use '../base/variables';
+@use 'sass:color';
 
 .button {
-  background-color: $main-color;
+  background-color: variables.$main-color;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -9,7 +10,7 @@
   cursor: pointer;
 
   &:hover {
-    background-color: darken($main-color, 10%);
+    background-color: color.adjust(variables.$main-color, $lightness: -10%);
   }
 }
 
@@ -21,17 +22,29 @@
   padding: 6px 12px;
   border-radius: 3px;
   text-decoration: none;
-  border: 1px solid $main-color;
+  border: 1px solid variables.$main-color;
   cursor: pointer;
 }
 
 .property-login a {
   background-color: #fff;
-  color: $main-color;
+  color: variables.$main-color;
 }
 
 .property-login a:hover,
 .header-right a:hover {
-  background-color: lighten($main-color, 40%);
-  color: darken($main-color, 20%);
+  background-color: lighten(variables.$main-color, 40%);
+  color: darken(variables.$main-color, 20%);
+}
+
+.property{
+  color: #fff;
+  font-size: 14px;
+  font-weight:500;
+}
+
+.property-image{
+  width:32px;
+  height:32px;
+  margin-top:5px;
 }

@@ -1,7 +1,7 @@
-@use 'variables';
+@use '../base/variables';
 
 .menu {
-  background-color: #003b95;
+  background-color: variables.$hover-blue;
   color: white;
   padding: 0 30px 10px 210px;
   display: flex;
@@ -18,5 +18,5 @@
 }
 
 .menu a:hover {
-  background-color: #004bb5;
+  background-color: variables.$main-blue;
 }

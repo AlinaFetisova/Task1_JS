@@ -1,3 +1,5 @@
+@use '../base/variables';
+
 .search-text {
   position: relative;
   z-index: 2;
@@ -26,9 +28,8 @@
 
 .search-section {
   position: relative;
-  background-color: $main-blue;
   color: white;
-  padding-bottom: 80px;
+  padding-bottom: 20px;
   overflow: hidden;
   margin: 0;
   text-align: left;
