@@ -18,3 +18,17 @@ if (h1){
 } else {
   console.log("На сторінці немає <h1>");
 }
+
+const allElements = document.querySelectorAll("*");
+
+allElements.forEach(el => {
+  let originalBg = window.getComputedStyle(el).backgroundColor;
+
+  el.addEventListener("mouseenter", () => {
+    el.style.backgroundColor = "red";
+  });
+
+  el.addEventListener("mouseleave", () => {
+    el.style.backgroundColor = originalBg;
+  });
+});
