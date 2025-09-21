@@ -19,7 +19,7 @@ if (h1){
   console.log("На сторінці немає <h1>");
 }
 
-const allElements = document.querySelectorAll("*");
+/*const allElements = document.querySelectorAll("*");
 
 allElements.forEach(el => {
   let originalBg = window.getComputedStyle(el).backgroundColor;
@@ -31,4 +31,4 @@ allElements.forEach(el => {
   el.addEventListener("mouseleave", () => {
     el.style.backgroundColor = originalBg;
   });
-});
+});*/
