@@ -9,40 +9,81 @@
 <body class="bg-gradient-to-br from-blue-200 via-white to-blue-100 min-h-screen flex items-center justify-center">
 
   <div class="w-full max-w-md bg-white p-8 rounded-2xl shadow-xl">
-    <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Зареєструватися</h2>
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Авторизація</h2>
 
-    <form action="#" method="POST" class="space-y-5">
+    <form id="loginForm" class="space-y-5">
+      <!-- Поле login -->
+      <div>
+        <label for="login" class="block text-sm font-medium text-gray-700">Логін</label>
+        <input type="text" id="login" name="login" required
+               class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Введіть логін">
+      </div>
+
+      <!-- Поле email -->
       <div>
         <label for="email" class="block text-sm font-medium text-gray-700">Електронна пошта</label>
         <input type="email" id="email" name="email" required
-               class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400">
+               class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="example@gmail.com">
       </div>
 
+      <!-- Поле phone -->
+      <div>
+        <label for="phone" class="block text-sm font-medium text-gray-700">Телефон</label>
+        <input type="text" id="phone" name="phone" required
+               class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="+380501234567">
+      </div>
+
+      <!-- Поле password -->
       <div>
         <label for="password" class="block text-sm font-medium text-gray-700">Пароль</label>
         <input type="password" id="password" name="password" required
-               class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400">
-      </div>
-
-      <div class="flex justify-between items-center">
-        <label class="flex items-center space-x-2 text-sm">
-          <input type="checkbox" class="accent-blue-500">
-          <span>Запам'ятати мене</span>
-        </label>
-        <a href="#" class="text-sm text-blue-500 hover:underline">Забули пароль?</a>
+               class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Введіть пароль">
       </div>
 
       <button type="submit"
-              class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-xl font-semibold transition duration-300">
-        Увійти
+              class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-xl font-semibold transition duration-300">Увійти
       </button>
     </form>
-
-    <p class="mt-6 text-center text-sm text-gray-600">
-      Немає акаунта?
-      <a href="#" class="text-blue-500 hover:underline">Зареєструватися</a>
-    </p>
   </div>
 
+  <script>
+    // Перевірка login, email, phone
+    document.getElementById("loginForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const login=document.getElementById("login").value;
+      const email=document.getElementById("email").value;
+      const phone=document.getElementById("phone").value;
+
+      // login: тільки латинські, цифри, підкреслення (3–16 символів)
+      const loginPattern=/^[a-zA-Z0-9_]{3,16}$/;
+      if (!login.match(loginPattern)) {
+        alert("Логін має містити лише латинські літери, цифри або _. Довжина 3–16 символів.");
+        return;
+      }
+
+      // email
+      const emailPattern=/^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/;
+      if (email.search(emailPattern) === -1) {
+        alert("Email введено неправильно!");
+        return;
+      }
+
+
+      // телефон
+      const phonePattern=/^(?:\+38)?0\d{9}$/;
+      if (!phone.match(phonePattern)) {
+        alert("Телефон має містити лише цифри, дозволено починати з +.");
+        return;
+      }
+
+      alert("Дані введено правильно!");
+    });
+
+    // replace — очищення логіну від зайвих символів
+    document.getElementById("login").addEventListener("input", function () {
+      this.value = this.value.replace(/[^a-zA-Z0-9_]/g, "");
+    });
+  </script>
 </body>
 </html>
