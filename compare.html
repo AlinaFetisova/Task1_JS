@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Порівняння фраз</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-blue-200 via-white to-blue-100 min-h-screen flex items-center justify-center">
+
+  <div class="w-full max-w-xl bg-white p-8 rounded-2xl shadow-xl">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Пошук спільних слів</h2>
+
+    <div class="space-y-5">
+      <div>
+        <label for="text1" class="block text-sm font-medium text-gray-700">Перша фраза</label>
+        <textarea id="text1" rows="3" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Введіть першу фразу..."></textarea>
+      </div>
+
+      <div>
+        <label for="text2" class="block text-sm font-medium text-gray-700">Друга фраза</label>
+        <textarea id="text2" rows="3" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Введіть другу фразу..."></textarea>
+      </div>
+
+      <button id="compareBtn" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-xl font-semibold transition duration-300">Порівняти
+      </button>
+
+      <div id="result" class="mt-4 text-center text-lg font-medium text-gray-800"></div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("compareBtn").addEventListener("click", function () {
+      const text1=document.getElementById("text1").value.toLowerCase();
+      const text2=document.getElementById("text2").value.toLowerCase();
+
+      // Розбиваємо текст на слова (без розділових знаків)
+      const words1=text1.match(/\b[\wа-яіїєґ']+\b/gi) || [];
+      const words2=text2.match(/\b[\wа-яіїєґ']+\b/gi) || [];
+
+      // Використовуємо Set для унікальних слів
+      const set1=new Set(words1);
+      const set2=new Set(words2);
+
+      // Знаходимо спільні слова
+      const commonWords=[...set1].filter(word => set2.has(word));
+
+      const resultDiv=document.getElementById("result");
+      if (commonWords.length>0) {
+        resultDiv.innerHTML=`Спільні слова: <span class="text-blue-600 font-semibold">${commonWords.join(", ")}</span>`;
+      } else {
+        resultDiv.innerHTML=`<span class="text-red-500">Спільних слів немає</span>`;
+      }
+    });
+  </script>
+
+</body>
+</html>
