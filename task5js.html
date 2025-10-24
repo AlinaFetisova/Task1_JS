@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>HTTP Cat API</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    img {
+      width: 400px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>HTTP Cat API 🐾</h1>
+  <input type="number" id="statusInput" placeholder="Введи код (200, 404, 500)">
+  <button id="getCatBtn">Показати котика</button>
+  <div id="result"></div>
+
+  <script>
+    async function showCat(statusCode) {
+      try {
+        const url = `https://http.cat/${statusCode}`;
+        document.getElementById('result').innerHTML =
+          `<img src="${url}" alt="HTTP Cat ${statusCode}" onerror="this.onerror=null;this.src='https://http.cat/404';">`;
+      } catch (error) {
+        document.getElementById('result').innerHTML = `<p style="color:red">${error}</p>`;
+      }
+    }
+
+    document.getElementById('getCatBtn').addEventListener('click', () => {
+      const code = document.getElementById('statusInput').value;
+      showCat(code);
+    });
+  </script>
+</body>
+</html>
